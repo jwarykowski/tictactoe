@@ -1,5 +1,6 @@
 'use strict';
 
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
@@ -22,10 +23,11 @@ module.exports = {
             loader: 'mustache'
         }, {
             test: /\.css$/,
-            loader: 'style!css'
+            loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
         }]
     },
     plugins: [
+        new ExtractTextPlugin('styles.css'),
         new HtmlWebpackPlugin({
             template: 'public/index.html',
             minify: {
