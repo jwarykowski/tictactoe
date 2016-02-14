@@ -1,4 +1,5 @@
 {
+    "port": "PORT",
     "log": {
         "level": "LOG_LEVEL"
     }
