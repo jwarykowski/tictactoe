@@ -1,3 +1,9 @@
 machine:
     node:
         version: 4.3.0
+
+deployment:
+    staging:
+        branch: master
+        heroku:
+            appname: tictactoe-jonathanchrisp
