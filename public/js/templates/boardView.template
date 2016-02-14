@@ -1,0 +1,36 @@
+<h2>Board {{boardNumber}}</h2>
+
+<p class="text-center">Remaining moves: {{moveCount}}</p>
+<p class="text-center"><strong>"{{player}}" player's turn</strong></p>
+
+<table class="board">
+    <tr>
+        <td data-cell="0" class="js-cell border-bottom-right">{{cell0}}</td>
+        <td data-cell="1" class="js-cell">{{cell1}}</td>
+        <td data-cell="2" class="js-cell border-bottom-left">{{cell2}}</td>
+    </tr>
+    <tr>
+        <td data-cell="3" class="js-cell">{{cell3}}</td>
+        <td data-cell="4" class="js-cell border-all">{{cell4}}</td>
+        <td data-cell="5" class="js-cell">{{cell5}}</td>
+    </tr>
+    <tr>
+        <td data-cell="6" class="js-cell border-top-right">{{cell6}}</td>
+        <td data-cell="7" class="js-cell">{{cell7}}</td>
+        <td data-cell="8" class="js-cell border-top-left">{{cell8}}</td>
+    </tr>
+</table>
+
+{{#isInvalid}}
+    <p class="padding text-center bg-danger">Invalid move, please try again</p>
+{{/isInvalid}}
+
+{{#isDraw}}
+    <p class="padding text-center bg-warning">Game was a draw</p>
+{{/isDraw}}
+
+{{#isWin}}
+    <p class="padding text-center bg-success">"{{player}}" player won the game</p>
+{{/isWin}}
+
+<button type="button" class="btn btn-default btn-sm js-reset-board center" {{^isPlaying}}disabled{{/isPlaying}}>Reset</button>

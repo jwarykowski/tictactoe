@@ -1,0 +1,6 @@
+<button type="button" class="btn btn-default btn-sm js-add-board">Add New Board</button>
+<button type="button" class="btn btn-default btn-sm js-reset-boards">Reset Boards</button>
+
+<hr>
+
+<div class="js-boards flex-container"></article>
