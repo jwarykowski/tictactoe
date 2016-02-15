@@ -28,6 +28,7 @@ describe('LayoutView', () => {
     }
 
     before(() => {
+        sandbox = sinon.sandbox.create();
         addTestNode();
     });
 
@@ -37,13 +38,14 @@ describe('LayoutView', () => {
 
     afterEach(() => {
         view.remove();
+        view = undefined;
     });
 
     after(() => {
         removeTestNode();
     });
 
-    describe('properties', () => {
+    describe('initialize', () => {
         describe('board', () => {
             it('is defined', () => {
                 expect(view.boards).toBeDefined();
@@ -53,28 +55,26 @@ describe('LayoutView', () => {
                 expect(view.boards).toEqual([]);
             });
         });
-
-        describe('events', () => {
-            it('is defined', () => {
-                expect(view.events).toBeDefined();
-            });
-
-            it('has the onClickAddBoard event handler', () => {
-                expect(view.events().hasOwnProperty('click button.js-add-board')).toEqual(true);
-                expect(typeof(view.events()['click button.js-add-board'])).toEqual('function');
-            });
-
-            it('has the onClickResetBoards event handler', () => {
-                expect(view.events().hasOwnProperty('click button.js-reset-boards')).toEqual(true);
-                expect(typeof(view.events()['click button.js-reset-boards'])).toEqual('function');
-            });
-        });
     });
 
     describe('events', () => {
+        it('is defined', () => {
+            expect(view.events).toBeDefined();
+        });
+
+        it('has the onClickAddBoard event handler', () => {
+            expect(view.events().hasOwnProperty('click button.js-add-board')).toEqual(true);
+            expect(typeof(view.events()['click button.js-add-board'])).toEqual('function');
+        });
+
+        it('has the onClickResetBoards event handler', () => {
+            expect(view.events().hasOwnProperty('click button.js-reset-boards')).toEqual(true);
+            expect(typeof(view.events()['click button.js-reset-boards'])).toEqual('function');
+        });
+
         describe('on add board button click', () => {
             beforeEach(() => {
-                addBoardSpy = sinon.spy(view, 'addBoard');
+                addBoardSpy = sandbox.spy(view, 'addBoard');
                 renderView();
 
                 view.$('button.js-add-board').click();
@@ -87,7 +87,7 @@ describe('LayoutView', () => {
 
         describe('on reset button click', () => {
             beforeEach(() => {
-                resetSpy = sinon.spy(view, 'reset');
+                resetSpy = sandbox.spy(view, 'reset');
                 renderView();
 
                 view.$('button.js-reset-boards').click();
@@ -134,7 +134,7 @@ describe('LayoutView', () => {
 
     describe('render', () => {
         beforeEach(() => {
-            addBoardSpy = sinon.spy(view, 'addBoard');
+            addBoardSpy = sandbox.spy(view, 'addBoard');
             renderView();
         });
 
@@ -157,8 +157,8 @@ describe('LayoutView', () => {
 
     describe('reset', () => {
         beforeEach(() => {
-            addBoardSpy = sinon.spy(view, 'addBoard');
-            removeBoardsSpy = sinon.spy(view, 'removeBoards');
+            addBoardSpy = sandbox.spy(view, 'addBoard');
+            removeBoardsSpy = sandbox.spy(view, 'removeBoards');
             view.reset();
         });
 
