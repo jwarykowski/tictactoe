@@ -6,7 +6,7 @@ import {Model} from 'backbone';
 const DEFAULT_STATE = ['','','','','','','','',''];
 const DEFAULT_MOVE_COUNT = 9;
 const DEFAULT_PLAYER = 'X';
-const DEFAULT_STATUS = '';
+const DEFAULT_STATUS = undefined;
 
 const WIN_COMBINATIONS = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -34,7 +34,7 @@ class Game extends Backbone.Model {
         return (status === 'win' || status === 'draw') ? true : false;
     }
 
-    isInValid(cell) {
+    isInvalid(cell) {
         let state = this.get('state');
         return (state[cell] !== '') ? true : false;
     }
@@ -57,8 +57,8 @@ class Game extends Backbone.Model {
         let nextPlayer = (this.get('player') == 'X') ? 'O' : 'X';
 
         this.set({
-            status: undefined,
-            player: nextPlayer
+            player: nextPlayer,
+            status: undefined
         });
     }
 
@@ -71,18 +71,21 @@ class Game extends Backbone.Model {
             return;
         }
 
-        if (this.isInValid(cell)) {
-            return this.set({status: 'invalid'});
+        if (this.isInvalid(cell)) {
+            this.set({status: 'invalid'});
+            return;
         }
 
         this.updateMoveCount();
         this.updateState(cell);
 
         if (this.isWin()) {
-            return this.set({moveCount: 0, status: 'win'});
+            this.set({moveCount: 0, status: 'win'});
+            return;
         }
         if (this.isDraw()) {
-            return this.set({status: 'draw'});
+            this.set({status: 'draw'});
+            return;
         }
 
         this.nextMove();
