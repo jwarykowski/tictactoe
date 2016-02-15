@@ -22,11 +22,11 @@ body {
 
 .js-board {
     padding: 10px;
-    margin: 10px 0px;
+    margin: 10px 0;
 }
 
-.js-board h2 {
-    margin-top: 0px;
+h2 {
+    margin-top: 0;
     text-align: center;
 }
 
@@ -50,26 +50,26 @@ table td:hover {
     cursor: pointer;
 }
 
-td.border-all {
+.border-all {
     border: 5px solid #f16924;
 }
 
-td.border-bottom-right {
+.border-bottom-right {
     border-bottom: 5px solid #f16924;
     border-right: 5px solid #f16924;
 }
 
-td.border-bottom-left {
+.border-bottom-left {
     border-bottom: 5px solid #f16924;
     border-left: 5px solid #f16924;
 }
 
-td.border-top-right {
+.border-top-right {
     border-top: 5px solid #f16924;
     border-right: 5px solid #f16924;
 }
 
-td.border-top-left {
+.border-top-left {
     border-top: 5px solid #f16924;
     border-left: 5px solid #f16924;
 }
