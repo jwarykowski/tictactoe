@@ -7,7 +7,7 @@
 
 # tic-tac-toe
 
-![tictactoe](https://cloud.githubusercontent.com/assets/406799/13043596/ec8e86fc-d37d-11e5-8068-243c293a4d08.png)
+![tic-tac-toe](https://cloud.githubusercontent.com/assets/406799/13044676/4183c27a-d384-11e5-9a96-628b5e5251fa.png)
 
 ## Synopsis
 The Tic-tac-toe application is primarily built with the following frameworks/libraries:
