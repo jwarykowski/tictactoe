@@ -7,7 +7,7 @@ import template from'../templates/layoutView.template';
 
 const BOARD_SELECTOR = '.js-boards';
 
-class LayoutView extends Backbone.View {
+class LayoutView extends View {
     initialize() {
         this.boards = [];
     }
@@ -57,6 +57,6 @@ class LayoutView extends Backbone.View {
         this.removeBoards();
         this.addBoard();
     }
-};
+}
 
 export default LayoutView;

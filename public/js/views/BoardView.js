@@ -1,6 +1,5 @@
 'use strict';
 
-import $ from 'jquery';
 import _ from 'underscore';
 import {View} from 'backbone';
 import template from '../templates/boardView.template';
@@ -12,7 +11,7 @@ function buildCellState(state) {
     }, {});
 }
 
-class BoardView extends Backbone.View {
+class BoardView extends View {
     initialize(options) {
         this.model = options.model;
         this.boardNumber = options.boardNumber;
@@ -77,6 +76,6 @@ class BoardView extends Backbone.View {
             isWin
         }, modelJSON, cells)));
     }
-};
+}
 
 export default BoardView;

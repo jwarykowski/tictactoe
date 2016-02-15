@@ -248,12 +248,6 @@ describe('BoardView', () => {
         });
 
         describe('with state', () => {
-            let renderSpy;
-
-            beforeEach(() => {
-                renderSpy = sandbox.spy(view, 'render');
-            });
-
             describe('top left', () => {
                 beforeEach(() => {
                     view.model.set({

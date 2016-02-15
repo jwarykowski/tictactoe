@@ -1,6 +1,4 @@
 import 'expectations';
-import $ from 'jquery';
-import _ from 'underscore';
 import Game from '../../../js/models/Game.js';
 
 describe('Game', () => {

@@ -36,6 +36,6 @@ module.exports = {
             template: 'public/index.html',
             inject: true
         }),
-        new webpack.HotModuleReplacementPlugin(),
+        new webpack.HotModuleReplacementPlugin()
     ]
 };

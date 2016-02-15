@@ -14,7 +14,7 @@ const WIN_COMBINATIONS = [
     [0, 4, 8], [2, 4, 6]
 ];
 
-class Game extends Backbone.Model {
+class Game extends Model {
     defaults() {
         return {
             player: DEFAULT_PLAYER,
@@ -102,6 +102,6 @@ class Game extends Backbone.Model {
 
         this.set({state: state});
     }
-};
+}
 
 module.exports = Game;
