@@ -29,7 +29,6 @@ describe('index', () => {
 
         expressStub = {
             all: sandbox.spy(),
-            get: sandbox.spy(),
             listen: sandbox.stub(),
             use: sandbox.spy()
         };
