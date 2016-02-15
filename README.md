@@ -41,7 +41,10 @@ To run linter, client and server side tests:
 ```
 npm test
 ```
-The above scripts runs `eslint . && mocha && karma start --single-run`. If you only want to run the linter tests you can run `npm run lint`.
+The above scripts runs `eslint . && mocha && karma start --single-run`. If you only want to run the linter tests you can run `npm run lint`. The status of the build can be seen at the top of this file.
+
+### Static Code Analysis
+The application uses both [Code Climate](https://codeclimate.com/github/jonathanchrisp/tictactoe) and [BitHound](https://www.bithound.io/github/jonathanchrisp/tictactoe) to run static code analysis. Please see the status badges at the top of this file.
 
 ### Continuous Integration & Deployment
 Every push and pull request will run tests on [CircleCi](https://circleci.com/gh/jonathanchrisp/tictactoe), subject to the test result the service will then deploy the code to [Heroku](https://tictactoe-jonathanchrisp.herokuapp.com/).
