@@ -28,7 +28,7 @@ class BoardView extends Backbone.View {
         return {
             'click td.js-cell': function onClickTableCell(event) {
                 event.preventDefault();
-                this.move($(event.currentTarget));
+                this.move(event.currentTarget.dataset.cell);
             },
             'click button.js-reset-board': function onClickResetBoard(event) {
                 event.preventDefault();
@@ -37,8 +37,7 @@ class BoardView extends Backbone.View {
         };
     }
 
-    move($target) {
-        let cell = $target.data('cell');
+    move(cell) {
         this.model.updateBoard(cell);
     }
 

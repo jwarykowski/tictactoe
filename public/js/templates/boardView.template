@@ -1,7 +1,7 @@
 <h2>Board {{boardNumber}}</h2>
 
-<p class="text-center">Remaining moves: {{moveCount}}</p>
-<p class="text-center"><strong>"{{player}}" player's turn</strong></p>
+<p class="js-moves text-center">Remaining moves: {{moveCount}}</p>
+<p class="js-player text-center"><strong>"{{player}}" player's turn</strong></p>
 
 <table class="board">
     <tr>
@@ -21,16 +21,16 @@
     </tr>
 </table>
 
-{{#isInvalid}}
-    <p class="padding text-center bg-danger">Invalid move, please try again</p>
-{{/isInvalid}}
-
 {{#isDraw}}
-    <p class="padding text-center bg-warning">Game was a draw</p>
+    <p class="js-draw padding text-center bg-warning">Game was a draw.</p>
 {{/isDraw}}
 
+{{#isInvalid}}
+    <p class="js-invalid padding text-center bg-danger">Invalid move, please try again!</p>
+{{/isInvalid}}
+
 {{#isWin}}
-    <p class="padding text-center bg-success">"{{player}}" player won the game</p>
+    <p class="js-win padding text-center bg-success">Player "{{player}}" won the game.</p>
 {{/isWin}}
 
 <button type="button" class="btn btn-default btn-sm js-reset-board center" {{^isPlaying}}disabled{{/isPlaying}}>Reset</button>
